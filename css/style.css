@@ -1,0 +1,749 @@
+/* Переменные проекта */
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --secondary-color: #198754;
+  --bg-light: #f8f9fa;
+  --text-color: #212529;
+  --text-muted: #6c757d;
+  --border-color: #dee2e6;
+  --container-width: 1200px;
+}
+
+/* Сброс стилей */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-color);
+  line-height: 1.5;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  padding: 15px 0;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Кнопки */
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn--primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn--outline {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.btn--outline:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Hero section */
+.hero {
+  padding: 60px 0;
+  background-color: var(--bg-light);
+}
+
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hero__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero__title {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+.hero__utp {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.hero__utp li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.hero__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.hero__form input[type="text"],
+.hero__form input[type="tel"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+/* Секции общие */
+.section {
+  padding: 60px 0;
+}
+
+.section__title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Блок 2: Карточки долгов */
+.debts__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .debts__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.debts__card {
+  padding: 25px;
+  border-radius: 8px;
+  border-top: 4px solid var(--border-color);
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.debts__card--success { border-top-color: #198754; }
+.debts__card--danger { border-top-color: #dc3545; }
+.debts__card--info { border-top-color: #0dcaf0; }
+
+.debts__card h3 {
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+}
+
+.debts__card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.debts__card li {
+  margin-bottom: 8px;
+}
+
+/* Блок 3: Табы и таблицы */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.tab-btn.active {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.procedure-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.procedure-table th, 
+.procedure-table td {
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.procedure-table th {
+  background-color: var(--bg-light);
+}
+
+.procedure-table .recommended {
+  background-color: rgba(13, 110, 253, 0.05);
+  border-color: var(--primary-color);
+}
+/* Стили для подзаголовка секции */
+.section__subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: -30px;
+  margin-bottom: 30px;
+}
+
+/* Блок 4: Фильтры и поиск */
+.cases__filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.filter-control {
+  padding: 10px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 0.95rem;
+}
+
+.search-input {
+  flex-grow: 1;
+  min-width: 250px;
+}
+
+/* Таблица дел */
+.cases-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.cases-table th,
+.cases-table td {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.cases-table th {
+  background-color: var(--bg-light);
+  font-weight: 600;
+}
+
+.cases-table tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.link-court {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-court:hover {
+  text-decoration: underline;
+}
+
+/* Квиз */
+.quiz__wrapper {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.quiz__progress {
+  margin-bottom: 25px;
+}
+
+.quiz__progress-text {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.quiz__progress-bar {
+  height: 8px;
+  background-color: var(--bg-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.quiz__progress-fill {
+  height: 100%;
+  width: 14.28%; /* 1 из 7 */
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.quiz__step {
+  display: none;
+}
+
+.quiz__step.active {
+  display: block;
+}
+
+.quiz__question {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.quiz__options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.quiz__radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quiz__radio:hover {
+  background-color: var(--bg-light);
+}
+
+.quiz__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.quiz__inputs input {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.quiz__navigation {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Выгоды */
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .benefits__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.benefits__card {
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.benefits__card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.benefits__card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* FAQ Accordion */
+.faq__accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq__item {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.faq__question {
+  width: 100%;
+  padding: 18px 20px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq__icon {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.faq__item.active .faq__icon {
+  transform: rotate(45deg);
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 20px;
+  color: var(--text-muted);
+}
+
+.faq__item.active .faq__answer {
+  max-height: 200px;
+  padding: 0 20px 18px 20px;
+}
+
+/* Модальное окно */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal__content {
+  position: relative;
+  background: #fff;
+  padding: 35px 30px;
+  border-radius: 12px;
+  max-width: 450px;
+  width: 90%;
+  z-index: 1001;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.modal__title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.modal__subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Блок 8: Отзывы */
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.reviews__card {
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reviews__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reviews__date {
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.reviews__text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Блок 9: Контакты */
+.contacts__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: #fff;
+  padding: 35px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .contacts__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contacts__info h3,
+.contacts__form-wrapper h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.contacts__info p {
+  margin-bottom: 12px;
+  color: var(--text-muted);
+}
+
+.contacts__messengers {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.contacts__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contacts__form input {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Футер */
+.footer {
+  background-color: var(--bg-light);
+  border-top: 1px solid var(--border-color);
+  padding: 30px 0;
+  margin-top: 60px;
+}
+
+.footer__bottom {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Эффекты при наведении на кнопки */
+.btn {
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Интерактивность карточек */
+.debts__card,
+.benefits__card,
+.reviews__card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.debts__card:hover,
+.benefits__card:hover,
+.reviews__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Мобильная адаптивность для мелких экранов */
+@media (max-width: 600px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .section__title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .quiz__wrapper {
+    padding: 20px 15px;
+  }
+
+  .contacts__grid {
+    padding: 20px 15px;
+  }
+}
+
+/* Эффекты при наведении на кнопки */
+.btn {
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Эффекты при наведении на карточки */
+.debts__card,
+.benefits__card,
+.reviews__card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.debts__card:hover,
+.benefits__card:hover,
+.reviews__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+
+
+
+
+
+
+
+
+

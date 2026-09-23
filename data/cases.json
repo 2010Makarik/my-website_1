@@ -1,0 +1,38 @@
+[
+  {
+    "date": "2026-04-25",
+    "client": "Евглевских Д.А.",
+    "caseNumber": "А56-34605/2024",
+    "duration": 10,
+    "debtWrittenOff": 2113000,
+    "arbitrator": "Владимиров Т.А.",
+    "courtDecisionUrl": "https://kad.arbitr.ru/"
+  },
+  {
+    "date": "2026-02-14",
+    "client": "Иванов И.И.",
+    "caseNumber": "А40-12845/2025",
+    "duration": 8,
+    "debtWrittenOff": 850000,
+    "arbitrator": "Смирнов С.С.",
+    "courtDecisionUrl": "https://kad.arbitr.ru/"
+  },
+  {
+    "date": "2025-11-05",
+    "client": "Петрова А.В.",
+    "caseNumber": "А40-98765/2024",
+    "duration": 12,
+    "debtWrittenOff": 3400000,
+    "arbitrator": "Кузнецов А.А.",
+    "courtDecisionUrl": "https://kad.arbitr.ru/"
+  },
+  {
+    "date": "2025-08-19",
+    "client": "Сидоров В.К.",
+    "caseNumber": "А50-44120/2024",
+    "duration": 6,
+    "debtWrittenOff": 490000,
+    "arbitrator": "Морозова Е.В.",
+    "courtDecisionUrl": "https://kad.arbitr.ru/"
+  }
+]

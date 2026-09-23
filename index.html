@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Списание долгов по 127-ФЗ — Официальная юридическая помощь</title>
+  <meta name="description" content="Бесплатное и судебное списание долгов по 127-ФЗ. Рассрочка 0%, сохранение имущества, гарантия результата в договоре.">
+  
+  <!-- Стили -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__container">
+    <div class="header__logo">
+      <a href="#"><strong>БанкротКонсалт</strong></a>
+    </div>
+
+    <div class="header__city">
+      <select id="city-select" class="header__select">
+        <option value="msk">Москва</option>
+        <option value="spb">Санкт-Петербург</option>
+        <option value="ekb">Екатеринбург</option>
+      </select>
+    </div>
+
+    <!-- ⬇️ ВСТАВЛЯЕМ НАВИГАЦИЮ СЮДА ⬇️ -->
+    <nav class="nav">
+      <a href="#debts">Какие долги списываем</a>
+      <a href="#procedures">Тарифы</a>
+      <a href="#cases">Выигранные дела</a>
+      <a href="#quiz">Калькулятор</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <div class="header__messengers">
+      <a href="https://wa.me/70000000000" target="_blank" class="btn-messenger wa">WhatsApp</a>
+      <a href="https://t.me/your_bot" target="_blank" class="btn-messenger tg">Telegram</a>
+    </div>
+
+    <div class="header__phone">
+      <a href="tel:88000000000" class="phone-link">8 (800) 000-00-00</a>
+      <span class="phone-subtext">Звонок по РФ бесплатный</span>
+    </div>
+
+    <button class="btn btn--outline" id="header-cta-btn">Консультация</button>
+  </div>
+</header>
+
+  <!-- БЛОК 1: Hero -->
+  <section class="hero">
+    <div class="container hero__container">
+      <div class="hero__content">
+        <h1 class="hero__title">Спишите долги законно по 127-ФЗ — для физлиц и юрлиц</h1>
+        <p class="hero__subtitle">Работаем под ключ. Фиксируем цену в договоре. Даём гарантию результата. Более 7 600 завершённых дел за 10 лет.</p>
+        
+        <ul class="hero__utp">
+          <li>💰 Рассрочка 0% до 10 месяцев</li>
+          <li>🏠 Сохраним имущество и ипотечную квартиру</li>
+          <li>⏸️ Кредиты не платите с первого дня обращения</li>
+          <li>🔒 Гарантия списания долга в договоре</li>
+        </ul>
+
+        <!-- Быстрая форма -->
+        <form class="hero__form" id="hero-form">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" name="phone" id="hero-phone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <label class="form-checkbox">
+            <input type="checkbox" checked required>
+            <span>Согласен на обработку персональных данных</span>
+          </label>
+          <button type="submit" class="btn btn--primary">Получить бесплатную консультацию</button>
+        </form>
+      </div>
+
+      <div class="hero__image-wrapper">
+        <!-- Заглушка под фото главного юриста -->
+        <div class="hero__lawyer-card">
+          <div class="lawyer-photo-placeholder">Фото Юриста</div>
+          <p class="lawyer-name">Главный юрист компании</p>
+          <span class="lawyer-experience">Опыт работы 12 лет</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- БЛОК 2: Какие долги списываем -->
+<section id="debts" class="section debts">
+  <div class="container">
+    <h2 class="section__title">Какие долги можно списать, а какие — нет</h2>
+    
+    <div class="debts__grid">
+      <div class="debts__card debts__card--success">
+        <h3>Можно списать</h3>
+        <ul>
+          <li>Кредиты и кредитные карты</li>
+          <li>Микрозаймы и займы МФО</li>
+          <li>Долги перед залоговыми кредиторами</li>
+          <li>Штрафы ГИБДД и налоговой</li>
+          <li>Задолженности по рассрочкам и ЖКХ</li>
+          <li>Налоги и сборы</li>
+        </ul>
+      </div>
+
+      <div class="debts__card debts__card--danger">
+        <h3>Нельзя списать</h3>
+        <ul>
+          <li>Возмещение вреда здоровью</li>
+          <li>Компенсация морального вреда</li>
+          <li>Алименты</li>
+          <li>Субсидиарная ответственность</li>
+        </ul>
+      </div>
+
+      <div class="debts__card debts__card--info">
+        <h3>Можно сохранить</h3>
+        <ul>
+          <li>Единственное жильё (не в ипотеке)</li>
+          <li>Ипотечную квартиру (при реструктуризации)</li>
+          <li>Автомобиль (не залоговый)</li>
+          <li>Оружие, катера и лодки</li>
+          <li>Социальные выплаты и прожиточный минимум</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- БЛОК 3: Таблица процедур -->
+<section id="procedures" class="section procedures">
+  <div class="container">
+    <h2 class="section__title">Процедуры и тарифы списания долгов</h2>
+    
+    <!-- Переключатель табов -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="phys">Физические лица</button>
+      <button class="tab-btn" data-tab="jur">Юридические лица</button>
+      <button class="tab-btn" data-tab="tariffs">Тарифы</button>
+    </div>
+
+    <!-- Таб 1: Физлица -->
+    <div class="tab-content active" id="tab-phys">
+      <div class="table-wrapper">
+        <table class="procedure-table">
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>Внесудебное</th>
+              <th class="recommended">Судебное (Рекомендуем)</th>
+              <th>Реструктуризация</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Сумма долга</td>
+              <td>От 25 тыс. до 1 млн руб.</td>
+              <td>От 300 тыс. руб. без ограничений</td>
+              <td>От 500 тыс. руб.</td>
+            </tr>
+            <tr>
+              <td>Срок процедуры</td>
+              <td>6 месяцев</td>
+              <td>От 8 до 12 месяцев</td>
+              <td>До 3 лет</td>
+            </tr>
+            <tr>
+              <td>Сохранение жилья</td>
+              <td>Да (при соблюдении условий)</td>
+              <td>Да (прописано в договоре)</td>
+              <td>Да (полная защита)</td>
+            </tr>
+            <tr>
+              <td>Действие</td>
+              <td><button class="btn btn--outline select-plan-btn" data-plan="Внесудебное банкротство">Записаться</button></td>
+              <td class="recommended"><button class="btn btn--primary select-plan-btn" data-plan="Судебное банкротство">Записаться</button></td>
+              <td><button class="btn btn--outline select-plan-btn" data-plan="Реструктуризация">Записаться</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- БЛОК 4: Наши дела -->
+<section id="cases" class="section cases">
+  <div class="container">
+    <h2 class="section__title">7 600+ выигранных дел за 10 лет</h2>
+    <p class="section__subtitle">Реальные решения суда с номерами дел. Проверьте каждое — мы работаем прозрачно.</p>
+
+    <!-- Панель фильтров и поиска -->
+    <div class="cases__filters">
+      <select id="filter-year" class="filter-control">
+        <option value="all">Все года</option>
+        <option value="2026">2026</option>
+        <option value="2025">2025</option>
+      </select>
+
+      <select id="filter-amount" class="filter-control">
+        <option value="all">Любая сумма</option>
+        <option value="up-to-1m">До 1 млн руб.</option>
+        <option value="1m-to-3m">От 1 до 3 млн руб.</option>
+        <option value="over-3m">От 3 млн руб.</option>
+      </select>
+
+      <input type="text" id="search-case" class="filter-control search-input" placeholder="Поиск по № дела или фамилии...">
+    </div>
+
+    <!-- Таблица дел -->
+    <div class="table-wrapper">
+      <table class="cases-table">
+        <thead>
+          <tr>
+            <th>Дата</th>
+            <th>Клиент</th>
+            <th>№ дела</th>
+            <th>Срок (мес)</th>
+            <th>Списан долг</th>
+            <th>Решение</th>
+          </tr>
+        </thead>
+        <tbody id="cases-tbody">
+          <!-- Строки генерируются автоматически через JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- БЛОК 5: Квиз "Узнайте стоимость" -->
+<section id="quiz" class="section quiz">
+  <div class="container">
+    <h2 class="section__title">Рассчитайте стоимость списания долгов</h2>
+    <p class="section__subtitle">Ответьте на 7 вопросов и получите предварительный расчет за 1 минуту</p>
+
+    <div class="quiz__wrapper">
+      <!-- Прогресс-бар -->
+      <div class="quiz__progress">
+        <div class="quiz__progress-text">Шаг <span id="quiz-current-step">1</span> из 7</div>
+        <div class="quiz__progress-bar">
+          <div class="quiz__progress-fill" id="quiz-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Контейнер шагов -->
+      <form id="quiz-form" class="quiz__form">
+        <!-- Шаг 1 -->
+        <div class="quiz__step active" data-step="1">
+          <h3 class="quiz__question">1. Кем вы являетесь?</h3>
+          <div class="quiz__options">
+            <label class="quiz__radio">
+              <input type="radio" name="entity_type" value="phys" checked>
+              <span>Физическое лицо / ИП</span>
+            </label>
+            <label class="quiz__radio">
+              <input type="radio" name="entity_type" value="jur">
+              <span>Юридическое лицо (ООО, АО)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Шаг 2 -->
+        <div class="quiz__step" data-step="2">
+          <h3 class="quiz__question">2. Какова общая сумма ваших долгов?</h3>
+          <div class="quiz__options">
+            <label class="quiz__radio">
+              <input type="radio" name="debt_amount" value="up-to-500k">
+              <span>До 500 000 руб.</span>
+            </label>
+            <label class="quiz__radio">
+              <input type="radio" name="debt_amount" value="500k-1.5m" checked>
+              <span>От 500 000 до 1 500 000 руб.</span>
+            </label>
+            <label class="quiz__radio">
+              <input type="radio" name="debt_amount" value="over-1.5m">
+              <span>Более 1 500 000 руб.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Шаг 3 -->
+        <div class="quiz__step" data-step="3">
+          <h3 class="quiz__question">3. Есть ли у вас просрочки по платежам?</h3>
+          <div class="quiz__options">
+            <label class="quiz__radio">
+              <input type="radio" name="delays" value="none" checked>
+              <span>Просрочек нет, но платить тяжело</span>
+            </label>
+            <label class="quiz__radio">
+              <input type="radio" name="delays" value="1-3-months">
+              <span>Просрочка от 1 до 3 месяцев</span>
+            </label>
+            <label class="quiz__radio">
+              <input type="radio" name="delays" value="over-3-months">
+              <span>Просрочка более 3 месяцев</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Шаг 4 -->
+        <div class="quiz__step" data-step="4">
+          <h3 class="quiz__question">4. Есть ли у вас имущество в собственности (кроме единственного жилья)?</h3>
+          <div class="quiz__options">
+            <label class="quiz__radio">
+              <input type="radio" name="property" value="none" checked>
+              <span>Только единственное жильё</span>
+            </label>
+            <label class="quiz__radio">
+              <input type="radio" name="property" value="car">
+              <span>Есть автомобиль</span>
+            </label>
+            <label class="quiz__radio">
+              <input type="radio" name="property" value="real-estate">
+              <span>Есть другая недвижимость/земля</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Шаг 5 -->
+        <div class="quiz__step" data-step="5">
+          <h3 class="quiz__question">5. Находится ли ваше жильё в ипотеке?</h3>
+          <div class="quiz__options">
+            <label class="quiz__radio">
+              <input type="radio" name="mortgage" value="no" checked>
+              <span>Нет</span>
+            </label>
+            <label class="quiz__radio">
+              <input type="radio" name="mortgage" value="yes">
+              <span>Да, ипотека оформлена</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Шаг 6 -->
+        <div class="quiz__step" data-step="6">
+          <h3 class="quiz__question">6. Каков ваш официальный доход?</h3>
+          <div class="quiz__options">
+            <label class="quiz__radio">
+              <input type="radio" name="income" value="none" checked>
+              <span>Официального дохода нет</span>
+            </label>
+            <label class="quiz__radio">
+              <input type="radio" name="income" value="pension">
+              <span>Пенсия / Соцвыплаты</span>
+            </label>
+            <label class="quiz__radio">
+              <input type="radio" name="income" value="salary">
+              <span>Официальная зарплата</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Шаг 7 (Финал) -->
+        <div class="quiz__step" data-step="7">
+          <h3 class="quiz__question">7. Куда отправить расчёт и варианты процедур?</h3>
+          <div class="quiz__inputs">
+            <input type="text" name="quiz_name" placeholder="Ваше имя" required>
+            <input type="tel" name="quiz_phone" placeholder="+7 (___) ___-__-__" required>
+            <button type="submit" class="btn btn--primary btn--full">Получить результаты и вариант договора</button>
+          </div>
+        </div>
+
+        <!-- Навигация квиза -->
+        <div class="quiz__navigation">
+          <button type="button" class="btn btn--outline" id="quiz-prev-btn" disabled>Назад</button>
+          <button type="button" class="btn btn--primary" id="quiz-next-btn">Далее</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- БЛОК 6: Выгоды -->
+<section class="section benefits">
+  <div class="container">
+    <h2 class="section__title">Что вы получите, обратившись к нам</h2>
+    <div class="benefits__grid">
+      <div class="benefits__card">
+        <h3>Прекратите платить долги</h3>
+        <p>Все выплаты по кредитам замораживаются, пени и штрафы перестают начисляться с первого дня.</p>
+      </div>
+      <div class="benefits__card">
+        <h3>Зарплата и пенсия без удержаний</h3>
+        <p>Приставы и банки перестанут списывать ваши законные доходы.</p>
+      </div>
+      <div class="benefits__card">
+        <h3>Коллекторы исчезнут</h3>
+        <p>Звонки, визиты и давление на вас и ваших близких прекратятся навсегда.</p>
+      </div>
+      <div class="benefits__card">
+        <h3>Сохраните имущество</h3>
+        <p>Гарантия защиты единственного жилья и имущества прописывается в договоре.</p>
+      </div>
+      <div class="benefits__card">
+        <h3>Снимите запрет на выезд</h3>
+        <p>Сможете свободно передвигаться по стране и выезжать за границу.</p>
+      </div>
+      <div class="benefits__card">
+        <h3>Полное списание по суду</h3>
+        <p>Получение официального судебного решения и обнуление всех долгов.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- БЛОК 7: FAQ (Вопросы и ответы) -->
+<section id="faq" class="section faq">
+  <div class="container">
+    <h2 class="section__title">Часто задаваемые вопросы</h2>
+    <div class="faq__accordion">
+      <div class="faq__item">
+        <button class="faq__question">
+          <span>Могут ли забрать единственное жилье?</span>
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Нет, согласно ст. 446 ГПК РФ единственное жилье (если оно не находится в ипотеке) обладает исполнительским иммунитетом и забрать его за долги нельзя.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question">
+          <span>Узнают ли на работе о моем банкротстве?</span>
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Уведомление работодателя не является обязательным этапом. Информация публикуется в реестре ЕФРСБ, но работодатели редко отслеживают эти данные специально.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question">
+          <span>Перестанут ли звонить коллекторы и банки?</span>
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Да. С момента введения процедуры банкротства судом все взаимодействия с кредиторами и коллекторами прекращаются. Все требования направляются только через суд.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Модальное окно записи на консультацию -->
+<div class="modal" id="modal-consultation">
+  <div class="modal__overlay" id="modal-overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" id="modal-close">&times;</button>
+    <h3 class="modal__title">Запись на бесплатную консультацию</h3>
+    <p class="modal__subtitle">Оставьте заявку, и наш юрист свяжется с вами в течение 10 минут.</p>
+    
+    <form id="modal-form" class="modal__form">
+      <input type="hidden" name="selected_plan" id="modal-plan-input" value="Общая заявка">
+      
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+      </div>
+      <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+    </form>
+  </div>
+</div>
+
+<!-- БЛОК 8: Отзывы -->
+<section id="reviews" class="section reviews">
+  <div class="container">
+    <h2 class="section__title">Отзывы наших клиентов</h2>
+    
+    <div class="reviews__grid">
+      <div class="reviews__card">
+        <div class="reviews__header">
+          <strong>Алексей М.</strong>
+          <span class="reviews__date">Списано: 1 450 000 руб.</span>
+        </div>
+        <p class="reviews__text">
+          Долго не решался на банкротство, боялся потерять единственную квартиру. На первой же консультации юрист все подробно разложил по полочкам. В итоге дело выиграли за 9 месяцев, квартиру сохранили, долги полностью списаны!
+        </p>
+      </div>
+
+      <div class="reviews__card">
+        <div class="reviews__header">
+          <strong>Елена В.</strong>
+          <span class="reviews__date">Списано: 820 000 руб.</span>
+        </div>
+        <p class="reviews__text">
+          Огромная благодарность команде! Коллекторы перестали звонить уже через неделю после подачи заявления в суд. Все процедуры прошли без моего личного участия в суде.
+        </p>
+      </div>
+
+      <div class="reviews__card">
+        <div class="reviews__header">
+          <strong>Сергей П.</strong>
+          <span class="reviews__date">Списано: 3 100 000 руб.</span>
+        </div>
+        <p class="reviews__text">
+          Из-за проблем с бизнесом попал в тяжелую финансовую ситуацию. Юристы составили грамотную стратегию, предоставили удобную рассрочку на свои услуги. Рекомендую!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- БЛОК 9: Контакты и форма -->
+<section id="contacts" class="section contacts">
+  <div class="container">
+    <h2 class="section__title">Свяжитесь с нами</h2>
+    <div class="contacts__grid">
+      
+      <div class="contacts__info">
+        <h3>Главный офис</h3>
+        <p><strong>Адрес:</strong> г. Москва, ул. Тверская, д. 12, офис 405</p>
+        <p><strong>Телефон:</strong> 8 (800) 000-00-00 (Звонок по РФ бесплатный)</p>
+        <p><strong>График работы:</strong> Пн-Пт: 09:00 - 20:00, Сб-Вс: 10:00 - 18:00</p>
+        <p><strong>E-mail:</strong> info@bankrot-consult.ru</p>
+        
+        <div class="contacts__messengers">
+          <a href="#" class="btn btn--outline">WhatsApp</a>
+          <a href="#" class="btn btn--outline">Telegram</a>
+        </div>
+      </div>
+
+      <div class="contacts__form-wrapper">
+        <h3>Остались вопросы?</h3>
+        <p>Заполните форму, и мы перезвоним вам в течение 5 минут.</p>
+        
+        <form id="footer-form" class="contacts__form">
+          <input type="text" placeholder="Ваше имя" required>
+          <input type="tel" placeholder="8 999 123 45 67" required>
+          <button type="submit" class="btn btn--primary btn--full">Заказать звонок</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ФУТЕР (Подвал сайта) -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom">
+      <p>&copy; 2026 БанкротКонсальт. Все права защищены.</p>
+      <p>Информация на сайте не является публичной офертой. Банкротство граждан осуществляется в соответствии с Федеральным законом № 127-ФЗ «О несостоятельности (банкротстве)».</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+<!-- Скрипты -->
+<!-- Подключение двух скриптов перед закрывающим тегом body -->
+<script src="js/app.js"></script>
+<script src="js/cases.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
