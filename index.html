@@ -6,92 +6,133 @@
   <title>Списание долгов по 127-ФЗ — Официальная юридическая помощь</title>
   <meta name="description" content="Бесплатное и судебное списание долгов по 127-ФЗ. Рассрочка 0%, сохранение имущества, гарантия результата в договоре.">
   
+  <!-- Подключение фирменных шрифтов Lora и Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+  
   <!-- Стили -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- 0. HEADER -->
 <header class="header">
-  <div class="container header__container">
-    <div class="header__logo">
-      <a href="#"><strong>БанкротКонсалт</strong></a>
+  <div class="header__container">
+    <a href="#" class="header__logo">
+      <span>A</span> Арбитрус
+    </a>
+    
+    <div class="header__right">
+      <a href="tel:88000000000" class="header__phone">8 (800) 000-00-00</a>
+      <button class="btn-gold" id="header-cta-btn">Бесплатная консультация</button>
     </div>
-
-    <div class="header__city">
-      <select id="city-select" class="header__select">
-        <option value="msk">Москва</option>
-        <option value="spb">Санкт-Петербург</option>
-        <option value="ekb">Екатеринбург</option>
-      </select>
-    </div>
-
-    <!-- ⬇️ ВСТАВЛЯЕМ НАВИГАЦИЮ СЮДА ⬇️ -->
-    <nav class="nav">
-      <a href="#debts">Какие долги списываем</a>
-      <a href="#procedures">Тарифы</a>
-      <a href="#cases">Выигранные дела</a>
-      <a href="#quiz">Калькулятор</a>
-      <a href="#faq">Вопросы</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-
-    <div class="header__messengers">
-      <a href="https://wa.me/70000000000" target="_blank" class="btn-messenger wa">WhatsApp</a>
-      <a href="https://t.me/your_bot" target="_blank" class="btn-messenger tg">Telegram</a>
-    </div>
-
-    <div class="header__phone">
-      <a href="tel:88000000000" class="phone-link">8 (800) 000-00-00</a>
-      <span class="phone-subtext">Звонок по РФ бесплатный</span>
-    </div>
-
-    <button class="btn btn--outline" id="header-cta-btn">Консультация</button>
   </div>
 </header>
 
-  <!-- БЛОК 1: Hero -->
-  <section class="hero">
-    <div class="container hero__container">
-      <div class="hero__content">
-        <h1 class="hero__title">Спишите долги законно по 127-ФЗ — для физлиц и юрлиц</h1>
-        <p class="hero__subtitle">Работаем под ключ. Фиксируем цену в договоре. Даём гарантию результата. Более 7 600 завершённых дел за 10 лет.</p>
-        
-        <ul class="hero__utp">
-          <li>💰 Рассрочка 0% до 10 месяцев</li>
-          <li>🏠 Сохраним имущество и ипотечную квартиру</li>
-          <li>⏸️ Кредиты не платите с первого дня обращения</li>
-          <li>🔒 Гарантия списания долга в договоре</li>
-        </ul>
+<!-- 1. HERO -->
+<section id="hero" class="hero">
+  <div class="hero__container">
+    
+    <!-- Левая колонка -->
+    <div class="hero__content">
+      <h1 class="hero__title">Долг под контролем.<br>Решение — по закону</h1>
+      
+      <p class="hero__subtitle">
+        Арбитрус — правовая помощь в процедуре банкротства. Разбираем вашу ситуацию, просчитываем реальный путь и ведём дело от заявления до итогового решения суда.
+      </p>
 
-        <!-- Быстрая форма -->
-        <form class="hero__form" id="hero-form">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="Ваше имя" required>
-          </div>
-          <div class="form-group">
-            <input type="tel" name="phone" id="hero-phone" placeholder="+7 (___) ___-__-__" required>
-          </div>
-          <label class="form-checkbox">
-            <input type="checkbox" checked required>
-            <span>Согласен на обработку персональных данных</span>
-          </label>
-          <button type="submit" class="btn btn--primary">Получить бесплатную консультацию</button>
-        </form>
-      </div>
-
-      <div class="hero__image-wrapper">
-        <!-- Заглушка под фото главного юриста -->
-        <div class="hero__lawyer-card">
-          <div class="lawyer-photo-placeholder">Фото Юриста</div>
-          <p class="lawyer-name">Главный юрист компании</p>
-          <span class="lawyer-experience">Опыт работы 12 лет</span>
+      <div class="hero__features">
+        <div class="hero__feature-item">
+          <span class="hero__feature-title">Стратегия</span>
+          <span>Сначала расчёт и правовой анализ — потом процедура</span>
+        </div>
+        <div class="hero__feature-item">
+          <span class="hero__feature-title">Гарантии</span>
+          <span>Ведём дело до конца, отвечаем за результат</span>
+        </div>
+        <div class="hero__feature-item">
+          <span class="hero__feature-title">Законность</span>
+          <span>Работаем строго по ФЗ-127 «О несостоятельности»</span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- БЛОК 2: Какие долги списываем -->
+      <div class="hero__action">
+        <a href="#quiz" class="btn-gold">Бесплатный правовой анализ</a>
+        <span class="microtext">Консультация бесплатна и ни к чему не обязывает. Данные конфиденциальны</span>
+      </div>
+    </div>
+
+    <!-- Правая колонка (Форма заявки) -->
+    <div class="hero__card">
+      <h3 class="hero__card-title">Разберём вашу ситуацию</h3>
+      <form id="hero-form">
+        <div class="form-group">
+          <input type="text" class="form-input" placeholder="Ваше имя" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" class="form-input phone-mask" placeholder="Телефон" required>
+        </div>
+        <div class="form-group">
+          <textarea class="form-textarea" placeholder="Комментарий (необязательно)"></textarea>
+        </div>
+        <button type="submit" class="btn-gold btn-gold--full">Получить консультацию</button>
+        <p class="form-microtext">
+          Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- 2. С КАКИМИ ПРОБЛЕМАМИ МЫ РАБОТАЕМ -->
+<section id="problems" class="problems">
+  <div class="container">
+    <h2 class="section__title">С какими проблемами мы работаем</h2>
+    <p class="section__subtitle">Разбираем даже самые сложные финансовые ситуации и находим законный выход</p>
+    
+    <div class="problems__grid">
+      <div class="problem-card">
+        <div class="problem-card__icon">💳</div>
+        <h3 class="problem-card__title">Кредиты и кредитные карты</h3>
+        <p class="problem-card__text">Огромная процентная нагрузка, просрочки, задолженности перед несколькими банками одновременно.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">⚡</div>
+        <h3 class="problem-card__title">Займы в МФО</h3>
+        <p class="problem-card__text">Высокие штрафы и пени по микрозаймам, стремительный рост долга и постоянно растущие проценты.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">🏛️</div>
+        <h3 class="problem-card__title">Налоги и коммуналка (ЖКХ)</h3>
+        <p class="problem-card__text">Накопившиеся задолженности по коммунальным услугам, штрафам ГИБДД, налогам и сборам.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">📜</div>
+        <h3 class="problem-card__title">Долги по распискам</h3>
+        <p class="problem-card__text">Задолженности перед физическими и юридическими лицами по договорам займа и распискам.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">🔒</div>
+        <h3 class="problem-card__title">Арест счетов и приставы</h3>
+        <p class="problem-card__text">Исполнительные производства у ФССП, заблокированные банковские карты и удержания из зарплаты.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">📞</div>
+        <h3 class="problem-card__title">Давление коллекторов</h3>
+        <p class="problem-card__text">Бесконечные звонки вам, родственникам и на работу, психологическое давление и угрозы.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. КАКИЕ ДОЛГИ СПИСЫВАЕМ -->
 <section id="debts" class="section debts">
   <div class="container">
     <h2 class="section__title">Какие долги можно списать, а какие — нет</h2>
@@ -133,19 +174,107 @@
   </div>
 </section>
 
-<!-- БЛОК 3: Таблица процедур -->
+<!-- КАК РАБОТАЕТ АРБИТРУС (Степпер) -->
+<section id="how-it-works" class="section how-it-works">
+  <div class="container">
+    <h2 class="section__title">Как работает Арбитрус</h2>
+    <p class="section__subtitle">Понятный и прозрачный путь к жизни без долгов по ФЗ-127</p>
+
+    <div class="stepper">
+      <div class="stepper__item">
+        <div class="stepper__number">1</div>
+        <div class="stepper__content">
+          <h3>Правовой анализ</h3>
+          <p>Изучаем ваши документы, оцениваем риски и подбираем наиболее выгодную процедуру списания.</p>
+        </div>
+      </div>
+
+      <div class="stepper__item">
+        <div class="stepper__number">2</div>
+        <div class="stepper__content">
+          <h3>Сбор документов и защита</h3>
+          <p>Собираем полный пакет справок, останавливаем звонки коллекторов и передаём дело в суд.</p>
+        </div>
+      </div>
+
+      <div class="stepper__item">
+        <div class="stepper__number">3</div>
+        <div class="stepper__content">
+          <h3>Судебный процесс</h3>
+          <p>Представляем ваши интересы в суде без вашего личного присутствия на заседаниях.</p>
+        </div>
+      </div>
+
+      <div class="stepper__item">
+        <div class="stepper__number">4</div>
+        <div class="stepper__content">
+          <h3>Полное списание долгов</h3>
+          <p>Получаем решение суда о завершении процедуры и окончательном освобождении от всех задолженностей.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПОЧЕМУ АРБИТРУС (Сравнение) -->
+<section id="why-us" class="section why-us">
+  <div class="container">
+    <h2 class="section__title">Почему выбирают «Арбитрус»</h2>
+    <p class="section__subtitle">Сравнение работы с нашей компанией и альтернативных вариантов</p>
+
+    <div class="table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Критерий</th>
+            <th class="highlight">Арбитрус</th>
+            <th>Самостоятельно</th>
+            <th>Обычный юрист</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Фиксация стоимости</strong></td>
+            <td class="highlight">Да, цена зафиксирована в договоре</td>
+            <td>Непредсказуемые расходы</td>
+            <td>Возможны доплаты по ходу дела</td>
+          </tr>
+          <tr>
+            <td><strong>Гарантии результата</strong></td>
+            <td class="highlight">Да, прописаны в договоре</td>
+            <td>Без гарантий</td>
+            <td>Редко дают гарантии</td>
+          </tr>
+          <tr>
+            <td><strong>Участие клиента</strong></td>
+            <td class="highlight">Минимальное (всё делаем по доверенности)</td>
+            <td>Трата сотен часов личного времени</td>
+            <td>Частые личные встречи и вызовы</td>
+          </tr>
+          <tr>
+            <td><strong>Специализация</strong></td>
+            <td class="highlight">Только ФЗ-127 «О банкротстве» (10+ лет)</td>
+            <td>Отсутствие практики</td>
+            <td>Общий профиль (юристы широкого профиля)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 4. ТАБЛИЦА ПРОЦЕДУР -->
 <section id="procedures" class="section procedures">
   <div class="container">
     <h2 class="section__title">Процедуры и тарифы списания долгов</h2>
     
-    <!-- Переключатель табов -->
     <div class="tabs">
       <button class="tab-btn active" data-tab="phys">Физические лица</button>
       <button class="tab-btn" data-tab="jur">Юридические лица</button>
       <button class="tab-btn" data-tab="tariffs">Тарифы</button>
     </div>
 
-    <!-- Таб 1: Физлица -->
+    <!-- Вкладка 1: Физические лица -->
     <div class="tab-content active" id="tab-phys">
       <div class="table-wrapper">
         <table class="procedure-table">
@@ -186,16 +315,99 @@
         </table>
       </div>
     </div>
+
+    <!-- Вкладка 2: Юридические лица -->
+    <div class="tab-content" id="tab-jur">
+      <div class="table-wrapper">
+        <table class="procedure-table">
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>Банкротство ООО / АО</th>
+              <th>Упрощенная процедура</th>
+              <th>Ликвидация</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Сумма долга</td>
+              <td>От 2 млн руб.</td>
+              <td>От 500 тыс. руб.</td>
+              <td>До 2 млн руб.</td>
+            </tr>
+            <tr>
+              <td>Срок процедуры</td>
+              <td>От 12 месяцев</td>
+              <td>От 6 месяцев</td>
+              <td>От 4 месяцев</td>
+            </tr>
+            <tr>
+              <td>Защита руководства</td>
+              <td>Защита от субсидиарной ответственности</td>
+              <td>Полный анализ рисков</td>
+              <td>Безопасный вывод</td>
+            </tr>
+            <tr>
+              <td>Действие</td>
+              <td><button class="btn btn--outline select-plan-btn" data-plan="Банкротство ООО">Записаться</button></td>
+              <td><button class="btn btn--outline select-plan-btn" data-plan="Упрощенная процедура">Записаться</button></td>
+              <td><button class="btn btn--outline select-plan-btn" data-plan="Ликвидация компании">Записаться</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Вкладка 3: Тарифы -->
+    <div class="tab-content" id="tab-tariffs">
+      <div class="table-wrapper">
+        <table class="procedure-table">
+          <thead>
+            <tr>
+              <th>Тариф</th>
+              <th>Базовый</th>
+              <th class="recommended">Стандарт (Хит)</th>
+              <th>Премиум «Под ключ»</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Стоимость</td>
+              <td>от 8 000 руб/мес</td>
+              <td>от 12 000 руб/мес</td>
+              <td>от 16 000 руб/мес</td>
+            </tr>
+            <tr>
+              <td>Рассрочка 0%</td>
+              <td>До 12 месяцев</td>
+              <td>До 18 месяцев</td>
+              <td>До 24 месяцев</td>
+            </tr>
+            <tr>
+              <td>Участие в суде</td>
+              <td>Консультации</td>
+              <td>Юрист на всех заседаниях</td>
+              <td>Полное сопровождение без вашего присутствия</td>
+            </tr>
+            <tr>
+              <td>Действие</td>
+              <td><button class="btn btn--outline select-plan-btn" data-plan="Тариф Базовый">Выбрать тариф</button></td>
+              <td class="recommended"><button class="btn btn--primary select-plan-btn" data-plan="Тариф Стандарт">Выбрать тариф</button></td>
+              <td><button class="btn btn--outline select-plan-btn" data-plan="Тариф Премиум">Выбрать тариф</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
 </section>
-
-<!-- БЛОК 4: Наши дела -->
+<!-- 5. НАШИ ДЕЛА -->
 <section id="cases" class="section cases">
   <div class="container">
     <h2 class="section__title">7 600+ выигранных дел за 10 лет</h2>
     <p class="section__subtitle">Реальные решения суда с номерами дел. Проверьте каждое — мы работаем прозрачно.</p>
 
-    <!-- Панель фильтров и поиска -->
     <div class="cases__filters">
       <select id="filter-year" class="filter-control">
         <option value="all">Все года</option>
@@ -213,7 +425,6 @@
       <input type="text" id="search-case" class="filter-control search-input" placeholder="Поиск по № дела или фамилии...">
     </div>
 
-    <!-- Таблица дел -->
     <div class="table-wrapper">
       <table class="cases-table">
         <thead>
@@ -227,157 +438,95 @@
           </tr>
         </thead>
         <tbody id="cases-tbody">
-          <!-- Строки генерируются автоматически через JavaScript -->
+          <!-- Строки генерируются через JS -->
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- БЛОК 5: Квиз "Узнайте стоимость" -->
-<section id="quiz" class="section quiz">
+<!-- 6. КВИЗ "УЗНАЙТЕ СТОИМОСТЬ" -->
+<section class="quiz-section">
   <div class="container">
-    <h2 class="section__title">Рассчитайте стоимость списания долгов</h2>
-    <p class="section__subtitle">Ответьте на 7 вопросов и получите предварительный расчет за 1 минуту</p>
+    <h2>Рассчитайте стоимость списания долгов</h2>
+    <p>Ответьте на 7 вопросов и получите предварительный расчет за 1 минуту</p>
 
-    <div class="quiz__wrapper">
-      <!-- Прогресс-бар -->
-      <div class="quiz__progress">
-        <div class="quiz__progress-text">Шаг <span id="quiz-current-step">1</span> из 7</div>
-        <div class="quiz__progress-bar">
-          <div class="quiz__progress-fill" id="quiz-progress-fill"></div>
-        </div>
+    <!-- Индикатор прогресса -->
+    <div class="quiz-progress-wrapper">
+      <div class="quiz-progress-text">Шаг <span id="quiz-current-step">1</span> из 7</div>
+      <div class="quiz-progress-bar">
+        <div id="quiz-progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Форма квиза -->
+    <form id="quiz-form">
+
+      <!-- ШАГ 1 -->
+      <div class="quiz__step active" data-step="1">
+        <h3>1. Кем вы являетесь?</h3>
+        <label><input type="radio" name="role" value="Физическое лицо / ИП"> Физическое лицо / ИП</label>
+        <label><input type="radio" name="role" value="Юридическое лицо"> Юридическое лицо (ООО, АО)</label>
       </div>
 
-      <!-- Контейнер шагов -->
-      <form id="quiz-form" class="quiz__form">
-        <!-- Шаг 1 -->
-        <div class="quiz__step active" data-step="1">
-          <h3 class="quiz__question">1. Кем вы являетесь?</h3>
-          <div class="quiz__options">
-            <label class="quiz__radio">
-              <input type="radio" name="entity_type" value="phys" checked>
-              <span>Физическое лицо / ИП</span>
-            </label>
-            <label class="quiz__radio">
-              <input type="radio" name="entity_type" value="jur">
-              <span>Юридическое лицо (ООО, АО)</span>
-            </label>
-          </div>
-        </div>
+      <!-- ШАГ 2 -->
+      <div class="quiz__step" data-step="2">
+        <h3>2. Какова общая сумма ваших долгов?</h3>
+        <label><input type="radio" name="sum" value="До 500 тыс"> До 500 000 руб.</label>
+        <label><input type="radio" name="sum" value="500к - 1.5м"> От 500 000 до 1 500 000 руб.</label>
+        <label><input type="radio" name="sum" value="Более 1.5м"> Более 1 500 000 руб.</label>
+      </div>
 
-        <!-- Шаг 2 -->
-        <div class="quiz__step" data-step="2">
-          <h3 class="quiz__question">2. Какова общая сумма ваших долгов?</h3>
-          <div class="quiz__options">
-            <label class="quiz__radio">
-              <input type="radio" name="debt_amount" value="up-to-500k">
-              <span>До 500 000 руб.</span>
-            </label>
-            <label class="quiz__radio">
-              <input type="radio" name="debt_amount" value="500k-1.5m" checked>
-              <span>От 500 000 до 1 500 000 руб.</span>
-            </label>
-            <label class="quiz__radio">
-              <input type="radio" name="debt_amount" value="over-1.5m">
-              <span>Более 1 500 000 руб.</span>
-            </label>
-          </div>
-        </div>
+      <!-- ШАГ 3 -->
+      <div class="quiz__step" data-step="3">
+        <h3>3. Есть ли у вас просрочки по платежам?</h3>
+        <label><input type="radio" name="delay" value="Нет просрочек"> Просрочек нет, но платить тяжело</label>
+        <label><input type="radio" name="delay" value="1-3 месяца"> Просрочка от 1 до 3 месяцев</label>
+        <label><input type="radio" name="delay" value="Более 3 месяцев"> Просрочка более 3 месяцев</label>
+      </div>
 
-        <!-- Шаг 3 -->
-        <div class="quiz__step" data-step="3">
-          <h3 class="quiz__question">3. Есть ли у вас просрочки по платежам?</h3>
-          <div class="quiz__options">
-            <label class="quiz__radio">
-              <input type="radio" name="delays" value="none" checked>
-              <span>Просрочек нет, но платить тяжело</span>
-            </label>
-            <label class="quiz__radio">
-              <input type="radio" name="delays" value="1-3-months">
-              <span>Просрочка от 1 до 3 месяцев</span>
-            </label>
-            <label class="quiz__radio">
-              <input type="radio" name="delays" value="over-3-months">
-              <span>Просрочка более 3 месяцев</span>
-            </label>
-          </div>
-        </div>
+      <!-- ШАГ 4 -->
+      <div class="quiz__step" data-step="4">
+        <h3>4. Есть ли у вас имущество в собственности (кроме единственного жилья)?</h3>
+        <label><input type="radio" name="property" value="Единственное жилье"> Только единственное жильё</label>
+        <label><input type="radio" name="property" value="Автомобиль"> Есть автомобиль</label>
+        <label><input type="radio" name="property" value="Другая недвижимость"> Есть другая недвижимость/земля</label>
+      </div>
 
-        <!-- Шаг 4 -->
-        <div class="quiz__step" data-step="4">
-          <h3 class="quiz__question">4. Есть ли у вас имущество в собственности (кроме единственного жилья)?</h3>
-          <div class="quiz__options">
-            <label class="quiz__radio">
-              <input type="radio" name="property" value="none" checked>
-              <span>Только единственное жильё</span>
-            </label>
-            <label class="quiz__radio">
-              <input type="radio" name="property" value="car">
-              <span>Есть автомобиль</span>
-            </label>
-            <label class="quiz__radio">
-              <input type="radio" name="property" value="real-estate">
-              <span>Есть другая недвижимость/земля</span>
-            </label>
-          </div>
-        </div>
+      <!-- ШАГ 5 -->
+      <div class="quiz__step" data-step="5">
+        <h3>5. Находится ли ваше жильё в ипотеке?</h3>
+        <label><input type="radio" name="hypothec" value="Нет"> Нет</label>
+        <label><input type="radio" name="hypothec" value="Да"> Да, ипотека оформлена</label>
+      </div>
 
-        <!-- Шаг 5 -->
-        <div class="quiz__step" data-step="5">
-          <h3 class="quiz__question">5. Находится ли ваше жильё в ипотеке?</h3>
-          <div class="quiz__options">
-            <label class="quiz__radio">
-              <input type="radio" name="mortgage" value="no" checked>
-              <span>Нет</span>
-            </label>
-            <label class="quiz__radio">
-              <input type="radio" name="mortgage" value="yes">
-              <span>Да, ипотека оформлена</span>
-            </label>
-          </div>
-        </div>
+      <!-- ШАГ 6 -->
+      <div class="quiz__step" data-step="6">
+        <h3>6. Каков ваш официальный доход?</h3>
+        <label><input type="radio" name="income" value="Нет дохода"> Официального дохода нет</label>
+        <label><input type="radio" name="income" value="Зарплата"> Официальная зарплата</label>
+        <label><input type="radio" name="income" value="Пенсия/Соцвыплаты"> Пенсия / Соцвыплаты</label>
+      </div>
 
-        <!-- Шаг 6 -->
-        <div class="quiz__step" data-step="6">
-          <h3 class="quiz__question">6. Каков ваш официальный доход?</h3>
-          <div class="quiz__options">
-            <label class="quiz__radio">
-              <input type="radio" name="income" value="none" checked>
-              <span>Официального дохода нет</span>
-            </label>
-            <label class="quiz__radio">
-              <input type="radio" name="income" value="pension">
-              <span>Пенсия / Соцвыплаты</span>
-            </label>
-            <label class="quiz__radio">
-              <input type="radio" name="income" value="salary">
-              <span>Официальная зарплата</span>
-            </label>
-          </div>
-        </div>
+      <!-- ШАГ 7 -->
+      <div class="quiz__step" data-step="7">
+        <h3>7. Куда отправить расчёт и варианты процедур?</h3>
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="8 999 123 45 67" required>
+        <button type="submit" class="btn-submit">Получить результаты и вариант договора</button>
+      </div>
 
-        <!-- Шаг 7 (Финал) -->
-        <div class="quiz__step" data-step="7">
-          <h3 class="quiz__question">7. Куда отправить расчёт и варианты процедур?</h3>
-          <div class="quiz__inputs">
-            <input type="text" name="quiz_name" placeholder="Ваше имя" required>
-            <input type="tel" name="quiz_phone" placeholder="+7 (___) ___-__-__" required>
-            <button type="submit" class="btn btn--primary btn--full">Получить результаты и вариант договора</button>
-          </div>
-        </div>
+      <!-- Кнопки переключения -->
+      <div class="quiz-navigation">
+        <button type="button" id="quiz-prev-btn" disabled>Назад</button>
+        <button type="button" id="quiz-next-btn">Далее</button>
+      </div>
 
-        <!-- Навигация квиза -->
-        <div class="quiz__navigation">
-          <button type="button" class="btn btn--outline" id="quiz-prev-btn" disabled>Назад</button>
-          <button type="button" class="btn btn--primary" id="quiz-next-btn">Далее</button>
-        </div>
-      </form>
-    </div>
+    </form>
   </div>
 </section>
 
-<!-- БЛОК 6: Выгоды -->
+<!-- 7. ВЫГОДЫ -->
 <section class="section benefits">
   <div class="container">
     <h2 class="section__title">Что вы получите, обратившись к нам</h2>
@@ -410,7 +559,7 @@
   </div>
 </section>
 
-<!-- БЛОК 7: FAQ (Вопросы и ответы) -->
+<!-- 8. FAQ -->
 <section id="faq" class="section faq">
   <div class="container">
     <h2 class="section__title">Часто задаваемые вопросы</h2>
@@ -448,7 +597,7 @@
   </div>
 </section>
 
-<!-- Модальное окно записи на консультацию -->
+<!-- МОДАЛЬНОЕ ОКНО -->
 <div class="modal" id="modal-consultation">
   <div class="modal__overlay" id="modal-overlay"></div>
   <div class="modal__content">
@@ -470,7 +619,7 @@
   </div>
 </div>
 
-<!-- БЛОК 8: Отзывы -->
+<!-- 9. ОТЗЫВЫ -->
 <section id="reviews" class="section reviews">
   <div class="container">
     <h2 class="section__title">Отзывы наших клиентов</h2>
@@ -509,7 +658,7 @@
   </div>
 </section>
 
-<!-- БЛОК 9: Контакты и форма -->
+<!-- 10. КОНТАКТЫ И ФОРМА -->
 <section id="contacts" class="section contacts">
   <div class="container">
     <h2 class="section__title">Свяжитесь с нами</h2>
@@ -543,27 +692,18 @@
   </div>
 </section>
 
-<!-- ФУТЕР (Подвал сайта) -->
+<!-- ФУТЕР -->
 <footer class="footer">
   <div class="container">
     <div class="footer__bottom">
-      <p>&copy; 2026 БанкротКонсальт. Все права защищены.</p>
+      <p>&copy; 2026 Арбитрус. Все права защищены.</p>
       <p>Информация на сайте не является публичной офертой. Банкротство граждан осуществляется в соответствии с Федеральным законом № 127-ФЗ «О несостоятельности (банкротстве)».</p>
     </div>
   </div>
 </footer>
 
-
-
-
-
-
-
-
 <!-- Скрипты -->
-<!-- Подключение двух скриптов перед закрывающим тегом body -->
 <script src="js/app.js"></script>
 <script src="js/cases.js"></script>
-  <script src="js/app.js"></script>
 </body>
 </html>
