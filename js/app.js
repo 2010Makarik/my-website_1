@@ -177,6 +177,26 @@ if (footerForm) {
     footerForm.reset();
   });
 }
+// Переключение табов в Блоке "Процедуры и тарифы"
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetTab = btn.dataset.tab; // phys, jur или tariffs
+
+    // Снимаем active со всех кнопок и контентов
+    tabBtns.forEach(b => b.classList.remove('active'));
+    tabContents.forEach(c => c.classList.remove('active'));
+
+    // Активируем нужную кнопку и нужную таблицу
+    btn.classList.add('active');
+    const activeContent = document.getElementById(`tab-${targetTab}`);
+    if (activeContent) {
+      activeContent.classList.add('active');
+    }
+  });
+});
 
 
 
