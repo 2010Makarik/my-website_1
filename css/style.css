@@ -1,458 +1,473 @@
-/* Переменные проекта */
+/* ==========================================
+   ДИЗАЙН-СИСТЕМА И ПЕРЕМЕННЫЕ «АРБИТРУС»
+   ========================================== */
+:root {
+  --color-navy: #11223F;      /* Глубокий тёмно-синий */
+  --color-graphite: #3A3F47;  /* Графит */
+  --color-gold: #C8A45C;      /* Тёплое золото */
+  --color-gold-hover: #b38f48;
+  --color-ivory: #F4F1EA;     /* Слоновая кость */
+  --color-white: #FFFFFF;     /* Белый */
+
+  --font-serif: 'Lora', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --card-radius: 16px;
+  --btn-radius: 8px;
+  --card-shadow: 0 4px 24px rgba(17, 34, 63, 0.08);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-:root {
-  --primary-color: #0d6efd;
-  --primary-hover: #0b5ed7;
-  --secondary-color: #198754;
-  --bg-light: #f8f9fa;
-  --text-color: #212529;
-  --text-muted: #6c757d;
-  --border-color: #dee2e6;
-  --container-width: 1200px;
-}
-
-/* Сброс стилей */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color: var(--text-color);
-  line-height: 1.5;
-  background-color: #ffffff;
+  margin: 0;
+  padding-top: 72px; /* Компенсация фиксированной шапки */
+  font-family: var(--font-sans);
+  color: var(--color-graphite);
+  background-color: var(--color-white);
+  line-height: 1.6;
 }
 
 .container {
-  max-width: var(--container-width);
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
-/* Header */
+/* ОБЩИЕ СТИЛИ КНОПОК */
+.btn-gold {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  border: none;
+  padding: 16px 32px;
+  border-radius: var(--btn-radius);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-gold--full {
+  width: 100%;
+}
+
+/* ==========================================
+   0. HEADER (ФИКСИРОВАННАЯ ШАПКА)
+   ========================================== */
 .header {
-  background: #ffffff;
-  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 12px rgba(17, 34, 63, 0.06);
   z-index: 1000;
-  padding: 15px 0;
+  display: flex;
+  align-items: center;
 }
 
 .header__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
 }
 
-/* Кнопки */
-.btn {
-  padding: 10px 20px;
-  border-radius: 6px;
-  border: none;
+.header__logo {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-navy);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__logo span {
+  color: var(--color-gold);
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header__phone {
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
+  color: var(--color-navy);
+  text-decoration: none;
+  font-size: 16px;
 }
 
-.btn--primary {
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
-.btn--primary:hover {
-  background-color: var(--primary-hover);
-}
-
-.btn--outline {
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
-  background: transparent;
-}
-
-.btn--outline:hover {
-  background: var(--primary-color);
-  color: #fff;
-}
-
-/* Hero section */
+/* ==========================================
+   1. HERO (ПЕРВЫЙ ЭКРАН)
+   ========================================== */
 .hero {
-  padding: 60px 0;
-  background-color: var(--bg-light);
+  background-color: var(--color-navy);
+  min-height: calc(90vh - 72px);
+  padding: 80px 0;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
 }
 
 .hero__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
   align-items: center;
-}
-
-@media (max-width: 768px) {
-  .hero__container {
-    grid-template-columns: 1fr;
-  }
 }
 
 .hero__title {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
+  font-family: var(--font-serif);
+  font-size: 56px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0 0 24px 0;
 }
 
 .hero__subtitle {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 25px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--color-ivory);
+  margin-bottom: 32px;
 }
 
-.hero__utp {
-  list-style: none;
-  margin-bottom: 30px;
-}
-
-.hero__utp li {
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.hero__form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.hero__form input[type="text"],
-.hero__form input[type="tel"] {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-}
-/* Секции общие */
-.section {
-  padding: 60px 0;
-}
-
-.section__title {
-  font-size: 2rem;
-  text-align: center;
+.hero__features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
   margin-bottom: 40px;
 }
 
-/* Блок 2: Карточки долгов */
-.debts__grid {
+.hero__feature-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-white);
+}
+
+.hero__feature-title {
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.hero__card {
+  background: var(--color-white);
+  border-radius: var(--card-radius);
+  padding: 32px;
+  box-shadow: var(--card-shadow);
+  color: var(--color-graphite);
+}
+
+.hero__card-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0 0 20px 0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-input, 
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(58, 63, 71, 0.2);
+  border-radius: var(--btn-radius);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus, 
+.form-textarea:focus {
+  border-color: var(--color-gold);
+}
+
+.form-textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+.form-microtext {
+  font-size: 12px;
+  color: var(--color-graphite);
+  opacity: 0.7;
+  margin-top: 12px;
+  line-height: 1.3;
+}
+
+/* ==========================================
+   2. С КАКИМИ ПРОБЛЕМАМИ МЫ РАБОТАЕМ
+   ========================================== */
+.problems {
+  background-color: var(--color-ivory);
+  padding: 96px 0;
+}
+
+.problems .section__title {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-navy);
+  text-align: center;
+  margin: 0 0 12px 0;
+}
+
+.problems .section__subtitle {
+  font-size: 18px;
+  color: var(--color-graphite);
+  text-align: center;
+  margin: 0 0 48px 0;
+  opacity: 0.85;
+}
+
+.problems__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
-@media (max-width: 900px) {
-  .debts__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.debts__card {
-  padding: 25px;
-  border-radius: 8px;
-  border-top: 4px solid var(--border-color);
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.debts__card--success { border-top-color: #198754; }
-.debts__card--danger { border-top-color: #dc3545; }
-.debts__card--info { border-top-color: #0dcaf0; }
-
-.debts__card h3 {
-  margin-bottom: 15px;
-  font-size: 1.25rem;
-}
-
-.debts__card ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.debts__card li {
-  margin-bottom: 8px;
-}
-
-/* Блок 3: Табы и таблицы */
-.tabs {
+.problem-card {
+  background-color: var(--color-white);
+  border-radius: var(--card-radius);
+  padding: 32px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.problem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(17, 34, 63, 0.12);
+}
+
+.problem-card__icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  background-color: var(--color-ivory);
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
 }
 
-.tab-btn {
-  padding: 10px 20px;
-  border: 1px solid var(--border-color);
-  background: #fff;
-  cursor: pointer;
-  border-radius: 4px;
+.problem-card__title {
+  font-family: var(--font-serif);
+  font-size: 22px;
   font-weight: 600;
+  color: var(--color-navy);
+  margin: 0 0 12px 0;
 }
 
-.tab-btn.active {
-  background: var(--primary-color);
-  color: #fff;
-  border-color: var(--primary-color);
+.problem-card__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-graphite);
+  margin: 0;
 }
 
-.table-wrapper {
-  overflow-x: auto;
+/* ==========================================
+   3. КАК РАБОТАЕТ АРБИТРУС (СТЕППЕР)
+   ========================================== */
+.how-it-works {
+  padding: 96px 0;
+  background-color: var(--color-white);
 }
 
-.procedure-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-}
-
-.procedure-table th, 
-.procedure-table td {
-  padding: 15px;
-  border: 1px solid var(--border-color);
-  text-align: left;
-}
-
-.procedure-table th {
-  background-color: var(--bg-light);
-}
-
-.procedure-table .recommended {
-  background-color: rgba(13, 110, 253, 0.05);
-  border-color: var(--primary-color);
-}
-/* Стили для подзаголовка секции */
-.section__subtitle {
+.how-it-works .section__title {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-navy);
   text-align: center;
-  color: var(--text-muted);
-  margin-top: -30px;
-  margin-bottom: 30px;
+  margin: 0 0 48px 0;
 }
 
-/* Блок 4: Фильтры и поиск */
-.cases__filters {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 25px;
-  flex-wrap: wrap;
+.stepper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
-.filter-control {
-  padding: 10px 15px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  background-color: #fff;
-  font-size: 0.95rem;
-}
-
-.search-input {
-  flex-grow: 1;
-  min-width: 250px;
-}
-
-/* Таблица дел */
-.cases-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-}
-
-.cases-table th,
-.cases-table td {
-  padding: 12px 15px;
-  border: 1px solid var(--border-color);
-  text-align: left;
-}
-
-.cases-table th {
-  background-color: var(--bg-light);
-  font-weight: 600;
-}
-
-.cases-table tr:nth-child(even) {
-  background-color: #fdfdfd;
-}
-
-.link-court {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.link-court:hover {
-  text-decoration: underline;
-}
-
-/* Квиз */
-.quiz__wrapper {
-  background: #fff;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 30px;
-  max-width: 700px;
-  margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.quiz__progress {
-  margin-bottom: 25px;
-}
-
-.quiz__progress-text {
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.quiz__progress-bar {
-  height: 8px;
-  background-color: var(--bg-light);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.quiz__progress-fill {
-  height: 100%;
-  width: 14.28%; /* 1 из 7 */
-  background-color: var(--primary-color);
-  transition: width 0.3s ease;
-}
-
-.quiz__step {
-  display: none;
-}
-
-.quiz__step.active {
-  display: block;
-}
-
-.quiz__question {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.quiz__options {
+.step-card {
+  background-color: var(--color-ivory);
+  border-radius: var(--card-radius);
+  padding: 32px 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 30px;
 }
 
-.quiz__radio {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 15px;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s;
+.step-card__number {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-gold);
+  line-height: 1;
 }
 
-.quiz__radio:hover {
-  background-color: var(--bg-light);
+.step-card__title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin: 0;
 }
 
-.quiz__inputs {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 30px;
+.step-card__text {
+  font-size: 15px;
+  color: var(--color-graphite);
+  margin: 0;
+  line-height: 1.5;
 }
 
-.quiz__inputs input {
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
+/* ==========================================
+   4. ПОЧЕМУ АРБИТРУС (ТАБЛИЦА)
+   ========================================== */
+.why-us {
+  padding: 96px 0;
+  background-color: var(--color-ivory);
 }
 
-.quiz__navigation {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid var(--border-color);
-  padding-top: 20px;
+.why-us .section__title {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-navy);
+  text-align: center;
+  margin: 0 0 48px 0;
 }
 
-.btn--full {
+.why-us__table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.comparison-table {
   width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-white);
+  text-align: left;
 }
 
-/* Выгоды */
-.benefits__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.comparison-table th,
+.comparison-table td {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(58, 63, 71, 0.1);
 }
 
-@media (max-width: 768px) {
-  .benefits__grid {
-    grid-template-columns: 1fr;
-  }
+.comparison-table th {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--color-navy);
+  background-color: #EBE6DC;
 }
 
-.benefits__card {
-  padding: 25px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: #fff;
+.comparison-table th.highlight,
+.comparison-table td.highlight {
+  background-color: rgba(200, 164, 92, 0.12);
+  font-weight: 600;
 }
 
-.benefits__card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 10px;
-  color: var(--primary-color);
+/* ==========================================
+   5. FAQ (АККОРДЕОН)
+   ========================================== */
+.faq-section {
+  padding: 96px 0;
+  background-color: var(--color-white);
 }
 
-.benefits__card p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
+.faq-section .section__title {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-navy);
+  text-align: center;
+  margin: 0 0 48px 0;
 }
 
-/* FAQ Accordion */
 .faq__accordion {
   max-width: 800px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 }
 
 .faq__item {
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background: #fff;
+  border: 1px solid rgba(58, 63, 71, 0.15);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  background-color: var(--color-white);
   overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq__item.active {
+  border-color: var(--color-gold);
 }
 
 .faq__question {
   width: 100%;
-  padding: 18px 20px;
+  padding: 24px;
   background: none;
   border: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.05rem;
+  font-family: var(--font-serif);
+  font-size: 20px;
   font-weight: 600;
+  color: var(--color-navy);
   cursor: pointer;
   text-align: left;
 }
 
 .faq__icon {
-  font-size: 1.3rem;
+  color: var(--color-gold);
+  font-size: 24px;
   transition: transform 0.3s ease;
 }
 
@@ -464,16 +479,54 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0 20px;
-  color: var(--text-muted);
+  padding: 0 24px;
+  color: var(--color-graphite);
 }
 
 .faq__item.active .faq__answer {
-  max-height: 200px;
-  padding: 0 20px 18px 20px;
+  max-height: 300px;
+  padding: 0 24px 24px 24px;
 }
 
-/* Модальное окно */
+/* ==========================================
+   6. ФИНАЛЬНЫЙ CTA И ФУТЕР
+   ========================================== */
+.final-cta {
+  padding: 96px 0;
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.final-cta .section__title {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  color: var(--color-white);
+  text-align: center;
+  margin: 0 0 12px 0;
+}
+
+.final-cta .section__subtitle {
+  font-size: 18px;
+  color: var(--color-ivory);
+  text-align: center;
+  margin: 0 0 48px 0;
+  opacity: 0.85;
+}
+
+.footer {
+  background-color: var(--color-navy);
+  color: var(--color-ivory);
+  border-top: 1px solid rgba(244, 241, 234, 0.1);
+  padding: 40px 0;
+}
+
+.footer__bottom {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* МОДАЛЬНОЕ ОКНО */
 .modal {
   position: fixed;
   top: 0;
@@ -500,248 +553,781 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(17, 34, 63, 0.6);
 }
 
 .modal__content {
   position: relative;
-  background: #fff;
-  padding: 35px 30px;
-  border-radius: 12px;
+  background: var(--color-white);
+  padding: 32px;
+  border-radius: var(--card-radius);
   max-width: 450px;
   width: 90%;
   z-index: 1001;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
 }
 
 .modal__close {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 16px;
+  right: 16px;
   background: none;
   border: none;
-  font-size: 1.8rem;
-  line-height: 1;
+  font-size: 24px;
   cursor: pointer;
-  color: var(--text-muted);
+  color: var(--color-graphite);
 }
 
-.modal__title {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+/* АНИМАЦИЯ СКРОЛЛА (FADE-UP) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
-.modal__subtitle {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 20px;
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
-/* Блок 8: Отзывы */
-.reviews__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-@media (max-width: 900px) {
-  .reviews__grid {
+/* ==========================================
+   АДАПТИВНОСТЬ (АДАПТИВ ПО ТЗ)
+   ========================================== */
+@media (max-width: 992px) {
+  .hero__container {
     grid-template-columns: 1fr;
+  }
+  .hero__title {
+    font-size: 32px;
+  }
+  .hero__features {
+    grid-template-columns: 1fr;
+  }
+  .problems__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stepper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .problems .section__title,
+  .how-it-works .section__title,
+  .why-us .section__title,
+  .faq-section .section__title,
+  .final-cta .section__title {
+    font-size: 28px;
   }
 }
 
-.reviews__card {
-  padding: 25px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+@media (max-width: 600px) {
+  .problems {
+    padding: 56px 0;
+  }
+  .how-it-works,
+  .why-us,
+  .faq-section,
+  .final-cta {
+    padding: 56px 0;
+  }
+  .problems__grid,
+  .stepper {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==========================================
+   ВОССТАНОВЛЕННЫЕ БЛОКИ (ТАБЛИЦА ДЕЛ, КВИЗ, ТАРИФЫ)
+   ========================================== */
+
+/* 1. Списки (Что можно / нельзя списать) */
+.debts-info, .debts__card {
+  background: var(--color-ivory);
+  border-radius: var(--card-radius);
+  padding: 32px;
+  margin-bottom: 32px;
 }
 
-.reviews__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border-color);
+.debts-info h3, .debts__title {
+  font-family: var(--font-serif);
+  color: var(--color-navy);
+  font-size: 22px;
+  margin-top: 0;
 }
 
-.reviews__date {
-  font-size: 0.85rem;
-  color: var(--primary-color);
+.debts-info ul, .debts__list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.debts-info li, .debts__item {
+  margin-bottom: 8px;
+  color: var(--color-graphite);
+}
+
+/* 2. Тарифы и табы */
+.tariffs-section {
+  padding: 64px 0;
+}
+
+.tabs-nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: 1px solid var(--color-navy);
+  background: transparent;
+  color: var(--color-navy);
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+/* 3. Таблица выигранных дел */
+.cases-section {
+  padding: 64px 0;
+  background-color: var(--color-white);
+}
+
+.cases-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.cases-filters select,
+.cases-filters input {
+  padding: 10px 14px;
+  border: 1px solid rgba(58, 63, 71, 0.2);
+  border-radius: var(--btn-radius);
+  font-family: var(--font-sans);
+  outline: none;
+}
+
+.cases-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.cases-table th, 
+.cases-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(58, 63, 71, 0.1);
+  font-size: 15px;
+}
+
+.cases-table th {
+  background-color: var(--color-ivory);
+  color: var(--color-navy);
+  font-family: var(--font-serif);
   font-weight: 600;
 }
 
-.reviews__text {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.5;
+.cases-table a {
+  color: var(--color-gold);
+  text-decoration: underline;
+  font-weight: 600;
 }
 
-/* Блок 9: Контакты */
-.contacts__grid {
+.cases-table a:hover {
+  color: var(--color-gold-hover);
+}
+
+/* 4. Квиз / Калькулятор */
+.quiz-section, .quiz__wrapper {
+  background-color: var(--color-ivory);
+  border-radius: var(--card-radius);
+  padding: 40px;
+  margin: 48px 0;
+  box-shadow: var(--card-shadow);
+}
+
+.quiz__step-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--color-navy);
+  margin-bottom: 20px;
+}
+
+.quiz__options {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  background: #fff;
-  padding: 35px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
-@media (max-width: 768px) {
-  .contacts__grid {
+.quiz__option-btn {
+  padding: 16px;
+  background: var(--color-white);
+  border: 2px solid transparent;
+  border-radius: var(--btn-radius);
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.quiz__option-btn:hover,
+.quiz__option-btn.active {
+  border-color: var(--color-gold);
+  background: #FFFDF9;
+}
+/* ==========================================
+   ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ВСЕХ ОСТАВШИХСЯ БЛОКОВ
+   ========================================== */
+
+/* 1. Глобальный сброс системных кнопок, инпутов и селектов */
+button, 
+input[type="button"], 
+input[type="submit"] {
+  font-family: var(--font-sans);
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--btn-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover {
+  background-color: var(--color-gold-hover);
+  transform: translateY(-1px);
+}
+
+select, 
+input[type="text"], 
+input[type="tel"], 
+input[type="email"] {
+  font-family: var(--font-sans);
+  padding: 10px 14px;
+  border: 1px solid rgba(58, 63, 71, 0.2);
+  border-radius: var(--btn-radius);
+  outline: none;
+  background-color: var(--color-white);
+}
+
+select:focus, 
+input:focus {
+  border-color: var(--color-gold);
+}
+
+/* 2. Блок «Что вы получите, обратившись к нам» */
+.benefits-grid, 
+.features-grid,
+section:has(h3) {
+  margin-top: 24px;
+}
+
+/* 3. Отзывы клиентов */
+.reviews-section, 
+.reviews {
+  padding: 64px 0;
+}
+
+.reviews__card, 
+.review-item {
+  background-color: var(--color-ivory);
+  border-radius: var(--card-radius);
+  padding: 24px;
+  margin-bottom: 16px;
+  border-left: 4px solid var(--color-gold);
+}
+
+/* 4. Контакты и мессенджеры */
+.contacts a[href*="wa.me"], 
+.contacts a[href*="t.me"],
+a[href*="WhatsApp"], 
+a[href*="Telegram"] {
+  display: inline-block;
+  margin-right: 12px;
+  margin-top: 8px;
+  padding: 8px 16px;
+  background-color: var(--color-navy);
+  color: var(--color-white) !important;
+  border-radius: var(--btn-radius);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.contacts a[href*="wa.me"]:hover, 
+.contacts a[href*="t.me"]:hover,
+a[href*="WhatsApp"]:hover, 
+a[href*="Telegram"]:hover {
+  background-color: var(--color-gold);
+}
+
+/* 5. Квиз и радио-кнопки */
+input[type="radio"], 
+input[type="checkbox"] {
+  accent-color: var(--color-gold);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+label {
+  cursor: pointer;
+  font-family: var(--font-sans);
+  margin-right: 16px;
+  line-height: 2;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+/* ==========================================
+   ФИНАЛЬНЫЕ ПРАВКИ (ТАРИФЫ, ВЫГОДЫ, МЕССЕНДЖЕРЫ)
+   ========================================== */
+
+/* 1. Таблицы (Тарифы и Дела) — закругление и границы */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid rgba(58, 63, 71, 0.12);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+th {
+  background-color: var(--color-ivory);
+  color: var(--color-navy);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  padding: 16px;
+  border-bottom: 2px solid rgba(58, 63, 71, 0.1);
+}
+
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(58, 63, 71, 0.08);
+  background-color: var(--color-white);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* 2. Ссылки на WhatsApp и Telegram в контактах */
+a[href*="wa"], 
+a[href*="t.me"], 
+a[href*="whatsapp"], 
+a[href*="telegram"],
+a[href*="WhatsApp"],
+a[href*="Telegram"] {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-navy);
+  color: var(--color-white) !important;
+  border-radius: var(--btn-radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  margin-right: 12px;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
+a[href*="wa"]:hover, 
+a[href*="t.me"]:hover,
+a[href*="WhatsApp"]:hover,
+a[href*="Telegram"]:hover {
+  background-color: var(--color-gold);
+  text-decoration: none;
+}
+
+/* 3. Оформление заголовков H3 и абзацев под ними (Блок «Что вы получите») */
+h3 {
+  font-family: var(--font-serif);
+  color: var(--color-navy);
+  font-size: 20px;
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+
+h3 + p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--color-graphite);
+  line-height: 1.6;
+}
+
+/* 4. Нижняя форма «Остались вопросы» */
+form input[type="text"], 
+form input[type="tel"],
+form input[type="email"] {
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+/* ==========================================
+   ТОЧЕЧНАЯ СТИЛИЗАЦИЯ МЕССЕНДЖЕРОВ И КАРТОЧЕК
+   ========================================== */
+
+/* 1. Стилизация ссылок WhatsApp и Telegram в кнопках */
+.contacts a,
+a[href*="wa.me"], 
+a[href*="t.me"], 
+a[href*="whatsapp"], 
+a[href*="telegram"],
+a[href*="WhatsApp"],
+a[href*="Telegram"] {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px !important;
+  background-color: var(--color-navy) !important;
+  color: var(--color-white) !important;
+  border-radius: var(--btn-radius) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-right: 12px !important;
+  margin-top: 8px !important;
+  transition: background-color 0.2s ease, transform 0.1s ease !important;
+}
+
+.contacts a:hover,
+a[href*="wa.me"]:hover, 
+a[href*="t.me"]:hover, 
+a[href*="whatsapp"]:hover, 
+a[href*="telegram"]:hover,
+a[href*="WhatsApp"]:hover,
+a[href*="Telegram"]:hover {
+  background-color: var(--color-gold) !important;
+  transform: translateY(-1px);
+}
+
+/* 2. Расположение блока «Что вы получите» сеткой из карточек */
+.benefits-grid,
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+/* Оформление элементов внутри блока преимуществ */
+.benefits-grid > div,
+.features-grid > div {
+  background-color: var(--color-white);
+  border: 1px solid rgba(58, 63, 71, 0.1);
+  border-radius: var(--card-radius);
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+/* ==========================================
+   ПРЕВРАЩАЕМ КВИЗ В СТИЛЬНЫЙ ИНТЕРАКТИВ
+   ========================================== */
+
+/* 1. Варианты ответов делаем крупными кликабельными карточками */
+label:has(input[type="radio"]) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background-color: var(--color-white);
+  border: 2px solid rgba(58, 63, 71, 0.12);
+  border-radius: var(--card-radius);
+  margin: 8px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+/* Эффект наведения на вариант ответа */
+label:has(input[type="radio"]):hover {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Подсветка ВЫБРАННОГО варианта ответа */
+label:has(input[type="radio"]:checked) {
+  border-color: var(--color-gold);
+  background-color: #FAF6EE; /* Легкий кремовый фон */
+  font-weight: 600;
+}
+
+/* 2. Скрытие неактивных шагов (если шаги обернуты в .quiz-step) */
+.quiz-step {
+  display: none;
+}
+
+.quiz-step.active {
+  display: block;
+}
+/* ==========================================
+   СТИЛИ ДЛЯ ПОШАГОВОГО КВИЗА
+   ========================================== */
+
+/* Скрытие неактивных шагов */
+.quiz__step {
+  display: none;
+}
+
+.quiz__step.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Шкала прогресса */
+.quiz-progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(58, 63, 71, 0.1);
+  border-radius: 4px;
+  margin: 12px 0 24px 0;
+  overflow: hidden;
+}
+
+#quiz-progress-fill {
+  height: 100%;
+  width: 14%; /* Начальная ширина 1 из 7 */
+  background-color: var(--color-gold);
+  transition: width 0.3s ease;
+}
+
+/* Красивые варианты ответов (карточки) */
+.quiz__step label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background-color: var(--color-white);
+  border: 1px solid rgba(58, 63, 71, 0.15);
+  border-radius: var(--btn-radius);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quiz__step label:hover {
+  border-color: var(--color-gold);
+  background-color: var(--color-ivory);
+}
+
+.quiz__step label:has(input:checked) {
+  border-color: var(--color-gold);
+  background-color: #FAF6EE;
+  font-weight: 600;
+}
+
+/* Кнопки переключения */
+.quiz-navigation {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+#quiz-prev-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+/* ==========================================
+   СНИППЕТЫ: СТЕППЕР И СРАВНЕНИЕ (ПО ТЗ)
+   ========================================== */
+
+/* Блок "Как работает" */
+.how-it-works {
+  background-color: var(--color-ivory, #F4F1EA);
+}
+
+.stepper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.stepper__item {
+  background: #FFFFFF;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(17, 34, 63, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.stepper__number {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-gold, #C8A45C);
+  color: #FFFFFF;
+  font-family: var(--font-serif, Georgia, serif);
+  font-weight: 700;
+  font-size: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.stepper__content h3 {
+  font-family: var(--font-serif, Georgia, serif);
+  color: var(--color-navy, #11223F);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.stepper__content p {
+  font-size: 15px;
+  color: var(--color-graphite, #3A3F47);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Блок "Почему Арбитрус" (Таблица) */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(17, 34, 63, 0.08);
+  margin-top: 32px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 18px 24px;
+  text-align: left;
+  border-bottom: 1px solid rgba(58, 63, 71, 0.1);
+  font-size: 15px;
+}
+
+.comparison-table th {
+  background-color: #F8F9FA;
+  color: var(--color-navy, #11223F);
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 18px;
+}
+
+.comparison-table .highlight {
+  background-color: rgba(200, 164, 92, 0.1);
+  font-weight: 600;
+  color: var(--color-navy, #11223F);
+}
+
+.comparison-table th.highlight {
+  background-color: var(--color-navy, #11223F);
+  color: var(--color-gold, #C8A45C);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .stepper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .stepper {
     grid-template-columns: 1fr;
   }
 }
+/* ==========================================
+   АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ (до 768px)
+   ========================================== */
 
-.contacts__info h3,
-.contacts__form-wrapper h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-}
-
-.contacts__info p {
-  margin-bottom: 12px;
-  color: var(--text-muted);
-}
-
-.contacts__messengers {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.contacts__form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.contacts__form input {
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-/* Футер */
-.footer {
-  background-color: var(--bg-light);
-  border-top: 1px solid var(--border-color);
-  padding: 30px 0;
-  margin-top: 60px;
-}
-
-.footer__bottom {
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Эффекты при наведении на кнопки */
-.btn {
-  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.btn:active {
-  transform: translateY(0);
-}
-
-/* Интерактивность карточек */
-.debts__card,
-.benefits__card,
-.reviews__card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.debts__card:hover,
-.benefits__card:hover,
-.reviews__card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
-
-/* Мобильная адаптивность для мелких экранов */
-@media (max-width: 600px) {
-  .section {
-    padding: 40px 0;
+@media (max-width: 768px) {
+  /* Фикс горизонтального скролла */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
   }
 
-  .section__title {
-    font-size: 1.5rem;
-    margin-bottom: 25px;
+  /* 0. HEADER */
+  .header {
+    height: auto;
+    padding: 10px 0;
   }
 
-  .quiz__wrapper {
-    padding: 20px 15px;
+  .header__container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 0 16px;
   }
 
-  .contacts__grid {
-    padding: 20px 15px;
+  .header__right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .header__phone {
+    font-size: 14px;
+  }
+
+  .header .btn-gold,
+  .header .btn--gold {
+    padding: 8px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* 1. HERO SECTION */
+  .hero {
+    padding: 30px 0;
+  }
+
+  .hero__container {
+    grid-template-columns: 1fr; /* Одна колонка вместо двух */
+    gap: 32px;
+    padding: 0 16px;
+  }
+
+  .hero__title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .hero__subtitle {
+    font-size: 15px;
+  }
+
+  .hero__action {
+    width: 100%;
+  }
+
+  .hero__action .btn-gold {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero__card, 
+  .card-form {
+    padding: 20px 16px;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
-
-/* Эффекты при наведении на кнопки */
-.btn {
-  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.btn:active {
-  transform: translateY(0);
-}
-
-/* Эффекты при наведении на карточки */
-.debts__card,
-.benefits__card,
-.reviews__card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.debts__card:hover,
-.benefits__card:hover,
-.reviews__card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
-
-
-
-
-
-
-
-
-
 
