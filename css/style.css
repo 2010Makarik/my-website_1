@@ -1315,13 +1315,38 @@ label:has(input[type="radio"]:checked) {
   }
 
   .hero__action {
-    width: 100%;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
 
-  .hero__action .btn-gold {
-    width: 100%;
-    text-align: center;
-  }
+.hero__action .btn-gold {
+  display: inline-block;
+  text-align: center;
+}
+
+.hero__action p,
+.hero__action span,
+.hero__action .microtext {
+  display: block;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  margin: 0;
+  max-width: 380px;
+}
+
+
+
+
+
+
+
+
+
+
 
   .hero__card, 
   .card-form {
